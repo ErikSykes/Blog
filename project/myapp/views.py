@@ -1,5 +1,12 @@
-from django.shortcuts import render, HttpResponse
-
-# Create your views here.
+# views.py
+from django.shortcuts import render
+from .models import User, Topic, FavoriteTopic, TopicType, Comment
+ 
 def home(request):
-	return render(request, "home.html")
+
+    models = [User, Topic, FavoriteTopic, TopicType, Comment]
+    return render(request, "home.html", {"models": models})
+
+def topics(request):
+    topics = Topic.objects.all()
+    return render(request, 'topics.html', {'topics': topics})

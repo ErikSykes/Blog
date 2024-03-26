@@ -1,0 +1,32 @@
+<!-- topics.html -->
+{% extends "base.html" %}
+{% block title %}Topics{% endblock %}
+ 
+{% block content %}
+<div class="container">
+    <h2>Topics</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for topic in topics %}
+            <tr>
+                <td>{{ topic.id }}</td>
+                <td>{{ topic.name }}</td>
+                <td>
+                    <ul>{% for comment in topic.comment_set.all %}
+                        <li>{{ comment.body }} - {{ comment.user.username }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
