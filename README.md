@@ -4,7 +4,7 @@
 
 ### Creators:
 - **Horváth Erik - M3ISEG**
-- **Váli Ádám - E6XNE**
+- **Váli Ádám - E6XNE1**
 - **Neszler Dáriusz - YGPGHH**
 
 ---
