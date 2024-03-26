@@ -1,11 +1,14 @@
-<!-- home.html -->
 {% extends "base.html" %}
-{% block title %} Home Page {% endblock %}
- 
+{% block title %} Home {% endblock %}
+
 {% block content %}
-<h2>Model Data:</h2>
-        <ul>
-            <li><a href="{% url 'topics' %}">Topics</a></li>
-            <!-- Adjust URLs according to your actual URL patterns -->
-        </ul>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Welcome to Our Website</h1>
+        <p class="lead">We are dedicated to providing high-quality content.</p>
+        <hr class="my-4">
+        <p>Explore our topics to learn more.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'topics' %}" role="button">Explore Topics</a>
+    </div>
+</div>
 {% endblock %}
