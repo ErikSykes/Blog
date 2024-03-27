@@ -1,20 +1,19 @@
+<!-- topics.html -->
 {% extends "base.html" %}
-{% block title %} Topics {% endblock %}
+{% block title %}Topics{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h2>Topics</h2>
-    <ul class="list-group">
+    <h2 class="mt-4 mb-3">Topics</h2>
+    <div class="list-group">
         {% for topic in topics %}
-        <li class="list-group-item">
-            <h4>{{ topic.name }}</h4>
-            <ul>
-                {% for comment in topic.comment_set.all %}
-                <li>{{ comment.body }} - {{ comment.user.username }}</li>
-                {% endfor %}
-            </ul>
-        </li>
+        <a href="{% url 'topic_comments' topic.id %}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{ topic.name }}</h5>
+                <small>{{ topic.id }}</small>
+            </div>
+        </a>
         {% endfor %}
-    </ul>
+    </div>
 </div>
 {% endblock %}

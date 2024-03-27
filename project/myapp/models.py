@@ -5,12 +5,16 @@ class User(models.Model):
     username = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
 
 class Topic(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     type = models.ForeignKey('TopicType', on_delete=models.CASCADE)
     description = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
 
 class FavoriteTopic(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -19,6 +23,8 @@ class FavoriteTopic(models.Model):
 class TopicType(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
 
 class Comment(models.Model):
     id = models.IntegerField(primary_key=True)

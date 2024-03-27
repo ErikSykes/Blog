@@ -10,3 +10,8 @@ def home(request):
 def topics(request):
     topics = Topic.objects.all()
     return render(request, 'topics.html', {'topics': topics})
+
+def topic_comments(request, topic_id):
+    topic = Topic.objects.get(pk=topic_id)
+    comments = Comment.objects.filter(topic=topic)
+    return render(request, 'topic_comments.html', {'topic': topic, 'comments': comments})
