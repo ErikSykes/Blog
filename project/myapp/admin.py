@@ -7,3 +7,4 @@ class TopicTypeAdmin(admin.ModelAdmin):
 admin.site.register(Topic)
 admin.site.register(TopicType, TopicTypeAdmin)
 admin.site.register(User)
+admin.site.register(Comment)
