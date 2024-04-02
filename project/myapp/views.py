@@ -1,7 +1,8 @@
 # views.py
 from .models import User, Topic, FavoriteTopic, TopicType, Comment
 from .forms import CommentForm  # Import the form for adding comments
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
+
 
  
 def home(request):
