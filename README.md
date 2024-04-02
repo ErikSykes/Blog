@@ -1,4 +1,4 @@
-# Rendszefejlesztés 2024 BLOG
+# Rendszerfejlesztés 2024 BLOG
 
 ---
 
