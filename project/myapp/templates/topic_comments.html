@@ -6,7 +6,7 @@
 
 <div class="container">
     <h2 class="mt-4 mb-3">Comments for {{ topic.name }}</h2>
-    <div id="comment-list" class="list-group" data-topic-id="{{ topic_id }}">
+    <div id="comment-list" class="list-group" data-topic-id="{{ topic.id }}">
         <!-- Comments will be dynamically added here -->
         {% for comment in comments %}
         <div class="list-group-item">
